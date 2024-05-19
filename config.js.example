@@ -1,0 +1,47 @@
+
+
+export default {
+	port: 3000, // the port to run the server on
+	statusPage: true, // weather to show a status page on the root path
+
+	default: {
+		allowMP3: true, // weather to allow mp3 streams
+		mp3Endpoints: {
+			"lowquality": { // This is the name of the quality endpoint
+				bitrate: 64, // This is the bitrate of the stream
+			},
+			"middlequality": {
+				bitrate: 128,
+			},
+			"highquality": {
+				bitrate: 320,
+			},
+			default: "middlequality", // the default endpoint to use if the client doesn't specify one
+			// if you'd like only one quality, you can only add one endpoint and set it as the default, then you won't need to specify the quality in the url
+		},
+		allowAAC: true, // same as above but for aac
+		aacEndpoints: {
+			"lowquality": { 
+				bitrate: 64,
+			},
+			"middlequality": {
+				bitrate: 128,
+			},
+			"highquality": {
+				bitrate: 320,
+			},
+			default: "middlequality",
+		},
+		onDemand: true, // weather to stop the source when there are no listeners
+		noListenersTimeout: 5000, // the amount of time to wait before disconnecting a source with no listeners
+		defaultCodec: "mp3", // the default codec to use if the client doesn't specify one
+	},
+
+	endpoints: {
+		example: { // This is the name of the endpoint
+			source: "https://listen.atomic.radio/dopephonk/highquality", // This is the source of the stream
+			// any other options added here will override the default options
+		},
+		// add as many endpoints as you want here
+	}
+}

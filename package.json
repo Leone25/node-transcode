@@ -1,0 +1,22 @@
+{
+  "name": "node-transcode",
+  "version": "1.0.0",
+  "description": "A simple server to relay and transcode audio live streams",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Enrico",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "express": "^4.19.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^3.3.2"
+  },
+  "type": "module"
+}
