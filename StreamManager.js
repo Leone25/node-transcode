@@ -185,10 +185,11 @@ export class ConverterStream extends StreamSplitter {
 				.format("mp3");
 		} else if (this.format === "aac") {
 			this.ffmpeg.audioCodec("aac")
-				.outputOptions(["-movflags +faststart"])
+				.outputOptions(["-movflags", "+faststart"])
 				.format("adts");
 		}
 		this.ffmpeg
+			.outputOptions(["-map_metadata", "0"])
 			.output(this);
 		this.ffmpeg.on("error", (err) => {
 			if (err.message === "ffmpeg was killed with signal SIGKILL") {
