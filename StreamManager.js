@@ -149,6 +149,7 @@ export class SourceStream extends StreamSplitter {
 		this.abortController = new AbortController();
 		const response = await fetch(this.source, {
 			signal: this.abortController.signal,
+			insecureHTTPParser: true,
 		});
 		response.body.pipe(this);
 		this.state = "connected";
