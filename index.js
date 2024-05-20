@@ -27,7 +27,7 @@ app.get(/^\/(\w+)(\/\w+)?(\.\w+)*$/, (req, res) => {
 		res.status(404).send("Not Found");
 		return;
 	}
-	res.setHeader("Content-Type", streamManager.fileTypeToContentType(info.format));
+	res.setHeader("Content-Type", StreamManager.fileTypeToContentType(info.format));
 	res.setHeader("Cache-Control", "no-store, no-cache, private");
 	res.setHeader("Expires", "0");
 	res.setHeader("Pragma", "no-cache");
