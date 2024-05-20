@@ -5,7 +5,7 @@ import merge from 'deepmerge';
 import StreamSplitter from './StreamSplitter.js';
 
 
-export class StreamHandler {
+export class StreamManager {
 	constructor(config) {
 		this.config = config;
 
