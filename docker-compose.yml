@@ -1,0 +1,13 @@
+
+
+services:
+  transcode:
+    build:
+      context: "."
+      dockerfile: "./Dockerfile"
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/app/
+    ports:
+      - 3000:3000
